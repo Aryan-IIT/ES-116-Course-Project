@@ -1,0 +1,19 @@
+Procedure to find Threshold:
+
+1. Hardware Setup: Connect your solar panel to the analog pin defined in the code (solarPin = A0). Ensure the connections are secure.
+
+2. Software Setup: Open the Arduino IDE and upload the provided code to your Arduino board.
+
+3. Serial Monitor: Open the Serial Monitor in the Arduino IDE.
+
+4. Observation: Observe the values printed on the Serial Monitor. These values represent the analog voltage readings from the solar panel, digitized to a range between 0 and 1023. (Here we used the concept of digitization taught in the lectures.)
+
+5. Light Exposure: Direct the laser towards the solar panel. Observe the change in the values displayed on the Serial Monitor. Note down the range of values when the panel is exposed to light.
+
+6. Darkness: Block the light source and observe the values again. Note down the range of values when the panel is in darkness.
+
+7. Threshold Determination: Determine the threshold value by finding the approximate midpoint between the values recorded in light and dark conditions.
+
+8. Threshold Setting: Use the determined threshold value in your project code to distinguish between light and dark conditions detected by the solar panel.
+
+9. Verification: Test the system with the set threshold to ensure accurate detection of light exposure.
