@@ -1,0 +1,12 @@
+Explanation (Receiver)
+
+1. Two constants are defined: solar_pin represents the pin where the positive terminal of the solar panel is connected (A0 in this case), and threshold sets a value (160) to determine whether the solar sensor is detecting light or not.
+
+2. In the setup() function, it configures the solar_pin as an input pin and initializes serial communication with a baud rate of 9600.
+
+3. The loop() function is where the main operation happens:
+    - It reads the analog value from the solar sensor using analogRead() and stores it in the variable Reading.
+    - Then, it creates an array BITS to store the bits of the data being received.
+    - If the Reading is greater than the threshold, indicating that the solar sensor is detecting light, it starts listening for data.
+    - It waits for a series of 8 bits (for each character) to be received, each bit representing either a 0 or a 1 based on whether the analog value from the solar sensor is above or below the threshold.
+    - Once it receives all 8 bits, it converts them into a character and prints it out via serial monitor.
