@@ -1,0 +1,21 @@
+Transmitter (Explaination):
+
+1. A constant integer named LaserPin is defined, representing the signal pin where the laser is connected (digital pin 4 in our case).
+
+2. In the setup() function:
+    - The LaserPin is configured as an output pin using pinMode().
+    - Serial communication is initiated with a baud rate of 9600 (bits per second) using Serial.begin().
+
+3. The loop() function:
+    - Prints a message indicating it's "waiting for a message" to be received via serial communication.
+    - Waits until data is available on the serial port using a while loop with Serial.available().
+    - Reads the incoming message as a string using Serial.readString().
+    - Prints a message indicating it's transmitting data.
+    - Processes the received message:
+        - Determines the length of the message and subtracts 1 to account for null termination.
+        - Converts the string message into a character array (myText) using toCharArray().
+        - Converts each character in the array to its ASCII equivalent and stores it in an integer array (ar).
+        - For each ASCII value in ar, converts it to binary and stores the binary representation in bits.
+        - Ensures that the first bit of each byte is set to 1 (which may be used as a start bit in a communication protocol).
+        - Sends each bit serially via the LaserPin using digitalWrite(), with a delay of 10 milliseconds between each bit.
+        - Sets the LaserPin LOW to indicate the end of transmission and delays for 100 milliseconds.
